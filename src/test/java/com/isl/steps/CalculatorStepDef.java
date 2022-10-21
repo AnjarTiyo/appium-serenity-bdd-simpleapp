@@ -50,4 +50,14 @@ public class CalculatorStepDef extends BaseTest {
         String op = getText.theOperator(operator);
         Assertions.assertEquals(operator, op);
     }
+
+    @Given("(.*) input (.*) digits of 1 to field angka1$")
+    public void inputDigitDigitsOfToFieldAngka1(String actor, String number1) {
+        calc.setFirstNumber(number1);
+    }
+
+    @Given("(.*) input (.*) digits of 1 to field angka2$")
+    public void inputDigitDigitsOfToFieldAngka2(String actor, String number2) {
+        calc.setSecondNumber(number2);
+    }
 }

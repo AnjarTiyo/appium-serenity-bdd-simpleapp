@@ -188,8 +188,8 @@ Feature: Calculator Apps
 
   @positive @calc-015
   Scenario Outline: Check maximum input of Calculator can process
-    Given User input <digit> digits of 1 to angka1 field
-    * User input <digit> digits of 1 to angka2 field
+    Given User input <digit> digits of 1 to field angka1
+    * User input <digit> digits of 1 to field angka2
     * User set operator to *
     When User tap equal button
     Then User should get <digit> of 2
