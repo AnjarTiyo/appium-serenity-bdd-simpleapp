@@ -32,12 +32,12 @@ public class AndroidDriverHook {
         AndroidDriverInit.quit();
     }
 
-    @AfterStep
-    public void afterStep(Scenario scenario) throws IOException {
-        File srcFile = driver.getScreenshotAs(OutputType.FILE);
-        String timeRun = new SimpleDateFormat("yyyy-MM-dd|HH:mm:ss|").format(new Date()) + scenario.getName();
-        String filename = scenario.getName();
-        File targetFile = new File("./target/screenshot/"+timeRun+ ".png");
-        FileUtils.copyFile(srcFile,targetFile);
-    }
+//    @AfterStep
+//    public void afterStep(Scenario scenario) throws IOException {
+//        File srcFile = driver.getScreenshotAs(OutputType.FILE);
+//        String timeRun = new SimpleDateFormat("yyyy-MM-dd|HH:mm:ss|").format(new Date()) + scenario.getName();
+//        String filename = scenario.getName();
+//        File targetFile = new File("./target/screenshot/"+timeRun+ ".png");
+//        FileUtils.copyFile(srcFile,targetFile);
+//    }
 }

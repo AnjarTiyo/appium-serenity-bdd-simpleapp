@@ -12,12 +12,12 @@ import static org.junit.Assert.assertTrue;
 public class MenuStepDef extends BaseTest {
 
     @When("(.*) tap hamburger button$")
-    public void tapHamburgerButton() {
+    public void tapHamburgerButton(String actor) {
         tapButton.on(HAMBURGER_BUTTON);
     }
 
     @Then("(.*) should see the Android icon$")
-    public void shouldSeeTheAndroidIcon() {
+    public void shouldSeeTheAndroidIcon(String actor) {
         assertTrue(see.androidIconDisplayed());
     }
 

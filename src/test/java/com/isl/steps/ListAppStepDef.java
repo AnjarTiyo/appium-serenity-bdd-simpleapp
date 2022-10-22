@@ -1,6 +1,7 @@
 package com.isl.steps;
 
 import com.isl.BaseTest;
+import com.isl.model.Direction;
 import com.isl.model.ListAppOptions;
 import com.isl.ui.CalculatorPage;
 import io.cucumber.java.en.Given;
@@ -10,9 +11,10 @@ import io.cucumber.java.en.When;
 public class ListAppStepDef extends BaseTest {
 
     @Given("(.*) already open List app$")
-    public void alreadyOpenListApp() {
+    public void alreadyOpenListApp(String actor) {
         tapButton.on(CalculatorPage.HAMBURGER_BUTTON);
         tapOptions.on("List");
+        swipeScreen.to(Direction.LEFT);
     }
 
     @When("(.*) reach the (.*) of List App options$")
