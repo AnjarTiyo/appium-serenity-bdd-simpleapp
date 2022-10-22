@@ -5,7 +5,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 
 public class CalculatorStepDef extends BaseTest {
@@ -40,7 +39,7 @@ public class CalculatorStepDef extends BaseTest {
     @Then("(.*) should get (.*) of 2$")
     public void userShouldGetDigitOf(String actor, int digit) {
         //for screenplay pattern, should go to questions package
-        String expectedAnswer = StringUtils.repeat("2", digit);
+        String expectedAnswer = String.valueOf(2 * (10 ^ digit));
         String answer = getText.theAnswer();
         Assertions.assertEquals(expectedAnswer, answer);
     }
@@ -53,11 +52,11 @@ public class CalculatorStepDef extends BaseTest {
 
     @Given("(.*) input (.*) digits of 1 to field angka1$")
     public void inputDigitDigitsOfToFieldAngka1(String actor, int digit) {
-        calc.setFirstNumber(digit);
+        calc.setFirstNumber(String.valueOf(10 ^ digit));
     }
 
     @Given("(.*) input (.*) digits of 1 to field angka2$")
     public void inputDigitDigitsOfToFieldAngka2(String actor, int digit) {
-        calc.setSecondNumber(digit);
+        calc.setSecondNumber(String.valueOf(10 ^ digit));
     }
 }
